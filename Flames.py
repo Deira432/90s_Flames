@@ -1,7 +1,7 @@
 #Flames
 
-# name_1 = 'Dee'
-# name_2 = 'Code'
+#name_1 = 'Dee'
+#name_2 = 'Code'
 def flames (name_1,name_2):
   key = ['f','l','a','m','e','s']
   list_name_1 = list(name_1.upper())
@@ -11,9 +11,13 @@ def flames (name_1,name_2):
   for items in list_name_1:
     for letters in list_name_2:
       if items == letters :
-        count += 1
+        list_name_2.remove(items)
+        list_name_1.remove(letters)
+  #print(list_name_1)
+  #print(list_name_2)
 
-  total_letter_count = (len(list_name_1) + len(list_name_2)) - count 
+  total_letter_count = (len(list_name_1) + len(list_name_2))  
+    #print(total_letter_count)
 
   for i in range(0,5):
     while total_letter_count > len(key):
@@ -28,7 +32,7 @@ def flames (name_1,name_2):
         #print('ELSE BLOCK')
         key.pop(total_letter_count-1)
 
-  #print(key)
+    #print(key)
 
   if key[0] == 'f':
     print(f"\nI smell a friend bond...between {name_1} and {name_2}")
